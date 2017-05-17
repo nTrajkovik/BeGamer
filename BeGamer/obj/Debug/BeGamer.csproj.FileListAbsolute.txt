@@ -1,0 +1,9 @@
+c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\bin\Debug\BeGamer.exe.config
+c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\bin\Debug\BeGamer.exe
+c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\bin\Debug\BeGamer.pdb
+c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\obj\Debug\BeGamer.csprojResolveAssemblyReference.cache
+c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\obj\Debug\BeGamer.Form1.resources
+c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\obj\Debug\BeGamer.Properties.Resources.resources
+c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\obj\Debug\BeGamer.csproj.GenerateResource.Cache
+c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\obj\Debug\BeGamer.exe
+c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\obj\Debug\BeGamer.pdb

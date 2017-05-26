@@ -9,48 +9,61 @@ namespace BeGamer
 {
     public class Scene
     {
-        private const int gravity = 1;
-        private List<Shape> shapes;
-        private List<Entity> entities;
+        private const int gravity = 0;
+        private List<Player> players;
+        private List<Enemy> enemies;
+        private List<Platform> platforms;
         public Scene()
         {
-            shapes = new List<Shape>();
-            entities = new List<Entity>();
+            platforms = new List<Platform>();
+            players = new List<Player>();
+            enemies = new List<Enemy>();
         }
         public void Draw(Graphics g)
         {
-            foreach (Shape s in shapes)
-            {
-                s.Draw(g);
-            }
-            foreach (Entity e in entities)
-            {
-                e.ApplyGravity(gravity);
-                e.Draw(g);
-            }
+            players.ForEach(a => { /*a.ApplyGravity(gravity);*/ a.Draw(g); });
+            enemies.ForEach(a => { a.ApplyGravity(gravity); a.Draw(g); });
+            platforms.ForEach(a => { a.Draw(g); });
         }
-        public void CheckCollision()
+        public void CheckCollision(Player player)
         {
-            foreach(Entity e in entities)
+            //foreach (Player player in players)
+            //{
+            foreach (Platform platform in platforms)
             {
-                foreach(Shape s in shapes)
+
+                if (player.player.IntersectsWith(platform.platform))
                 {
-                    //if(e.bounds)
+                    Rectangle difference = Rectangle.Intersect(platform.platform, player.player);
+                    if (!difference.IsEmpty)
+                    {
+                        //Calculate the difference and return player to right position
+                        player.StopX();
+                        player.StopY();
+                    }
+                    player.Color = Color.Green;
+                    
                 }
+                else
+                {
+                }
+
             }
+            //}
         }
-        public void AddToScene(Shape x)
+        public void AddToScene(Platform platform)
         {
-            if(x is Entity)
-            {
-                Entity tmp = x as Entity;
-                if(tmp != null) {
-                    entities.Add(tmp);
-                }
-            }
-            else { 
-                shapes.Add(x);
-            }
+            platforms.Add(platform);
+        }
+
+        public void AddToScene(Enemy enemy)
+        {
+            enemies.Add(enemy);
+        }
+
+        public void AddToScene(Player player)
+        {
+            players.Add(player);
         }
     }
 }

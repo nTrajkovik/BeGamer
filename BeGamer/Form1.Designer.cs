@@ -43,7 +43,7 @@
             // 
             this.LifeBar.Location = new System.Drawing.Point(1, 2);
             this.LifeBar.Name = "LifeBar";
-            this.LifeBar.Size = new System.Drawing.Size(100, 23);
+            this.LifeBar.Size = new System.Drawing.Size(199, 23);
             this.LifeBar.TabIndex = 0;
             this.LifeBar.Value = 100;
             // 

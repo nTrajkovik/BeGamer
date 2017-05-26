@@ -23,12 +23,13 @@ namespace BeGamer
             dY = 0;
         }
 
-        public override void Draw(Graphics g)
+        public void Draw(Graphics g)
         {
-            Position = new Point(Position.X + dX, Position.Y + dY);
-            Brush br = new SolidBrush(Color);
-            g.FillRectangle(br, enemy);
-            br.Dispose();
+            using (Brush br = new SolidBrush(Color))
+            {
+                enemy.Location = new Point(enemy.Location.X + dX, enemy.Location.Y + dY);
+                g.FillRectangle(br, enemy);
+            }
         }
 
         public override void Move()

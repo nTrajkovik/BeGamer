@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace BeGamer
 {
-    public abstract class Shape
+    public class Shape
     {
         public Point Position { get; set; }
         public Color Color { get; set; }
         public Size Size { get; set; }
 
-        public abstract void Draw(Graphics g);
+        //public abstract void Draw(Graphics g);
+        //public abstract Shape Bounds();
     }
 }

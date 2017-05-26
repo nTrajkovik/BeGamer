@@ -7,37 +7,88 @@ using System.Threading.Tasks;
 
 namespace BeGamer
 {
-    public class Player : Entity
+    public class Player
     {
         public Rectangle player;
         public int Health { get; set; }
         public int Damage { get; set; }
+        public int MaxSpeed { get; set; }
+        public bool Collided { get; set; }
+        public Color Color { get; set; }
+        public int dX { get; set; }
+        public int dY { get; set; }
+
         public Player(Point startPos, Color color, int dmg, int hp)
         {
-            Position = startPos;
+            //Position = startPos;
             player = new Rectangle(startPos, new Size(25, 50));
             Color = color;
             Damage = dmg;
             Health = hp;
-            dX = 1;
+            MaxSpeed = 21;
+            dX = 0;
             dY = 0;
         }
         
-        public override void Draw(Graphics g)
+        public void Draw(Graphics g)
         {
-            Position = new Point(Position.X + dX, Position.Y + dY);
-            Brush br = new SolidBrush(Color);
-            g.FillRectangle(br, player);
-            br.Dispose();
+            using (Brush br = new SolidBrush(Color))
+            {
+                player.Location = new Point(player.Location.X + dX, player.Location.Y + dY);
+                g.FillRectangle(br, player);
+            }
         }
-
-        public override void Move()
+        
+        public void StopX()
         {
-
+            dX = 0;
         }
-        public void Shoot()
+        public void StopY()
         {
-
+            dY = 0;
         }
+        
+
+        //internal bool CanMove(Direction dir)
+        //{
+        //    bool collided = CheckCollision(dir);
+        //    bool maxSpeed = true;
+        //    switch (dir)
+        //    {
+        //        case Entity.Direction.UP:
+        //        case Entity.Direction.DOWN:
+        //            if (Math.Abs(dY) > MaxSpeed)
+        //                maxSpeed = false;
+        //            break;
+        //        case Entity.Direction.LEFT:
+        //        case Entity.Direction.RIGHT:
+        //            if (Math.Abs(dX) > MaxSpeed)
+        //                maxSpeed = false;
+        //            break;
+        //        default:
+        //            Console.WriteLine("Something is wrong (Entity.Direction)");
+        //            break;
+        //    }
+        //    return maxSpeed && !collided;
+        //}
+
+        //private bool CheckCollision(Direction dir)
+        //{
+        //    //switch (dir)
+        //    //{
+        //    //    case Entity.Direction.UP:
+        //    //        return CollidedYneg;
+        //    //    case Entity.Direction.DOWN:
+        //    //        return CollidedYpos;
+        //    //    case Entity.Direction.LEFT:
+        //    //        return CollidedXneg;
+        //    //    case Entity.Direction.RIGHT:
+        //    //        return CollidedXpos;
+        //    //    default:
+        //    //        Console.WriteLine("Something is wrong with collision");
+        //    //        break;
+        //    //}
+        //    return false;
+        //}
     }
 }

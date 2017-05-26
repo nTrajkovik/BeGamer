@@ -7,21 +7,24 @@ using System.Threading.Tasks;
 
 namespace BeGamer
 {
-    public class Platform : Shape
+    public class Platform
     {
-        Rectangle platform;
+        public Rectangle platform;
+        public Color Color { get; set; }
+
         public Platform(Point pos, Color color, Size size)
         {
-            Position = pos;
             Color = color;
             platform = new Rectangle(pos, size);
         }
 
-        public override void Draw(Graphics g)
+        public void Draw(Graphics g)
         {
-            Brush br = new SolidBrush(Color);
-            g.FillRectangle(br, platform);
-            br.Dispose();
+            using (Brush br = new SolidBrush(Color))
+            {
+                platform.Location = new Point(platform.Location.X - 5, platform.Location.Y);
+                g.FillRectangle(br, platform);
+            }
         }
     }
 }

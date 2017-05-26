@@ -36,26 +36,29 @@
             // GameTimer
             // 
             this.GameTimer.Enabled = true;
-            this.GameTimer.Interval = 50;
+            this.GameTimer.Interval = 20;
             this.GameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
             // 
             // LifeBar
             // 
             this.LifeBar.Location = new System.Drawing.Point(1, 2);
+            this.LifeBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LifeBar.Name = "LifeBar";
-            this.LifeBar.Size = new System.Drawing.Size(199, 23);
+            this.LifeBar.Size = new System.Drawing.Size(149, 19);
             this.LifeBar.TabIndex = 0;
             this.LifeBar.Value = 100;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(782, 753);
+            this.ClientSize = new System.Drawing.Size(784, 618);
             this.Controls.Add(this.LifeBar);
-            this.MinimumSize = new System.Drawing.Size(600, 800);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(800, 657);
             this.Name = "Form1";
+            this.Opacity = 0.8D;
             this.Text = "BeGamer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);

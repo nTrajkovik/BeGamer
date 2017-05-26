@@ -38,6 +38,10 @@ namespace BeGamer
                 g.FillRectangle(br, player);
             }
         }
+        public void ApplyGravity(int g)
+        {
+            dY += g;
+        }
         
         public void StopX()
         {
@@ -47,7 +51,41 @@ namespace BeGamer
         {
             dY = 0;
         }
-        
+
+        public void CollisionFix(Rectangle difference)
+        {
+            if (difference.Width < difference.Height)
+            {
+                if (player.Location.X > difference.Location.X)
+                {
+                    //move player to the right
+                    player.Location = new Point(player.Location.X + difference.Width, player.Location.Y);
+                }
+                else if (player.Location.X < difference.Location.X)
+                {
+                    //move player to the left
+                    player.Location = new Point(player.Location.X - difference.Width, player.Location.Y);
+                }
+                StopX();
+            }
+            else
+            {
+                if (player.Location.Y > difference.Location.Y)
+                {
+                    //move player down
+                    player.Location = new Point(player.Location.X, player.Location.Y + difference.Height);
+                }
+                else if (player.Location.Y < difference.Location.Y)
+                {
+                    //move player up
+                    player.Location = new Point(player.Location.X, player.Location.Y - difference.Height);
+                }
+                StopY();
+            }
+
+        }
+    
+
 
         //internal bool CanMove(Direction dir)
         //{

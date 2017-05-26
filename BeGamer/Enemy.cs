@@ -7,15 +7,19 @@ using System.Threading.Tasks;
 
 namespace BeGamer
 {
-    public class Enemy : Entity
+    public class Enemy
     {
         public Rectangle enemy;
         public int Health { get; set; }
         public int Damage { get; set; }
+        public int MaxSpeed { get; set; }
+        public bool Collided { get; set; }
+        public Color Color { get; set; }
+        public int dX { get; set; }
+        public int dY { get; set; }
         public Enemy(Point startPos, Color color, int dmg, int hp)
         {
-            Position = startPos;
-            enemy = new Rectangle(Position, new Size(25, 50));
+            enemy = new Rectangle(startPos, new Size(25, 50));
             Color = color;
             Damage = dmg;
             Health = hp;
@@ -31,11 +35,7 @@ namespace BeGamer
                 g.FillRectangle(br, enemy);
             }
         }
-
-        public override void Move()
-        {
-
-        }
+        
         public void Jump()
         {
 

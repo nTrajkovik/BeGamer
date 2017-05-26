@@ -22,7 +22,7 @@ namespace BeGamer
         {
             using (Brush br = new SolidBrush(Color))
             {
-                platform.Location = new Point(platform.Location.X - 5, platform.Location.Y);
+                //platform.Location = new Point(platform.Location.X - 5, platform.Location.Y);
                 g.FillRectangle(br, platform);
             }
         }

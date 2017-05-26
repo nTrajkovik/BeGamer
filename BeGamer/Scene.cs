@@ -9,7 +9,7 @@ namespace BeGamer
 {
     public class Scene
     {
-        private const int gravity = 0;
+        private const int gravity = 1;
         private List<Player> players;
         private List<Enemy> enemies;
         private List<Platform> platforms;
@@ -21,36 +21,34 @@ namespace BeGamer
         }
         public void Draw(Graphics g)
         {
-            players.ForEach(a => { /*a.ApplyGravity(gravity);*/ a.Draw(g); });
-            enemies.ForEach(a => { a.ApplyGravity(gravity); a.Draw(g); });
+            players.ForEach(a => { a.ApplyGravity(gravity); a.Draw(g); });
+            enemies.ForEach(a => { /*a.ApplyGravity(gravity);*/ a.Draw(g); });
             platforms.ForEach(a => { a.Draw(g); });
         }
-        public void CheckCollision(Player player)
+        public void CheckCollision()
         {
-            //foreach (Player player in players)
-            //{
-            foreach (Platform platform in platforms)
+            foreach (Player player in players)
+            {
+                foreach (Platform platform in platforms)
             {
 
-                if (player.player.IntersectsWith(platform.platform))
-                {
-                    Rectangle difference = Rectangle.Intersect(platform.platform, player.player);
-                    if (!difference.IsEmpty)
+                    if (player.player.IntersectsWith(platform.platform))
                     {
-                        //Calculate the difference and return player to right position
-                        player.StopX();
-                        player.StopY();
+                        Rectangle difference = Rectangle.Intersect(platform.platform, player.player);
+                        if (!difference.IsEmpty)
+                        {
+                            player.CollisionFix(difference);//Calculate the difference and return player to right position
+                            player.Color = Color.Green;
+                        }
                     }
-                    player.Color = Color.Green;
-                    
-                }
-                else
-                {
-                }
+                    else
+                    {
+                        player.Color = Color.Blue;
+                    }
 
             }
-            //}
         }
+    }
         public void AddToScene(Platform platform)
         {
             platforms.Add(platform);

@@ -7,3 +7,12 @@ c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\obj\Debug\B
 c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\obj\Debug\BeGamer.csproj.GenerateResource.Cache
 c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\obj\Debug\BeGamer.exe
 c:\users\nenad\documents\visual studio 2015\Projects\BeGamer\BeGamer\obj\Debug\BeGamer.pdb
+C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\bin\Debug\BeGamer.exe.config
+C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\obj\Debug\BeGamer.exe
+C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\obj\Debug\BeGamer.pdb
+C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\obj\Debug\BeGamer.csprojResolveAssemblyReference.cache
+C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\obj\Debug\BeGamer.Form1.resources
+C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\obj\Debug\BeGamer.Properties.Resources.resources
+C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\obj\Debug\BeGamer.csproj.GenerateResource.Cache
+C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\bin\Debug\BeGamer.exe
+C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\bin\Debug\BeGamer.pdb

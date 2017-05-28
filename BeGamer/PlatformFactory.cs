@@ -22,8 +22,8 @@ namespace BeGamer
         }
         public Platform Next(int WindowWidth, int WindowHeight)
         {
-            platformWidth = random.Next(30, 300);
-            platformHeight = random.Next(45, 60);
+            platformWidth = random.Next(50, 200);
+            platformHeight = random.Next(30, 60);
 
             Xcoor = WindowWidth + (platformWidth / 2);
             Ycoor = random.Next(WindowHeight - 200, WindowHeight - 50);

@@ -16,3 +16,4 @@ C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\obj\Debug\BeGamer.Pr
 C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\obj\Debug\BeGamer.csproj.GenerateResource.Cache
 C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\bin\Debug\BeGamer.exe
 C:\Users\code\Desktop\BeGamer-master\BeGamer-master\BeGamer\bin\Debug\BeGamer.pdb
+C:\Users\Nenad\Documents\Visual Studio 2015\Projects\BeGamer\BeGamer\obj\Debug\BeGamer.StartingScreen.resources

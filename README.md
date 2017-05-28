@@ -16,10 +16,12 @@ A - лево
 D - десно
 
 ##3. Претставување на проблемот
+Потребата од исцртување на повеќе објекти доведе до потреба да се направи wrapper класа за сите нив. Scene објектот представува таква класа која се грижи за исцртување на сите објекти 
+како и детекција на колизија помеѓу различните типиви на објекти.
 
 ###3.1 Податочни структури
 
-Голем дел од функциите содржат **xml _summary_** со детално објаснување.
+Дел од функциите содржат **xml _summary_**.
 
 ```c#
 public class Scene
@@ -48,7 +50,7 @@ public class Scene
             platforms.ForEach(a => { a.Draw(g); });
         }
         /// <summary>
-        /// Removing the elements which are out of the screen
+        /// Removing the elements which are out of the screen (ShouldDie())
         /// </summary>
         public void Destroy()
         {
@@ -70,7 +72,7 @@ public class Scene
         }
         /// <summary>
         /// Detects collision and calls CollisionFix on the entities to adjust them to touch
-        /// the platform with which they collide
+        /// the platform with which they will collide
         /// </summary>
         public void CheckCollision()
         {

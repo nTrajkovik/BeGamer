@@ -4,10 +4,10 @@ Endless pixel platformer - BeGamer
 Windows Forms Project by: 
 Nenad Trajkovikj
 ---
-**Македонски** / [English](#1-description)
+**Македонски** 
 ##1. Опис на апликацијата
 Оваа апликација е игра која процедурално се генерира нивото, т.е. секој пат ќе биде различно. Целта на играта е да се освојат што е можно повеќе бодови преку преживување.
-Играта завршува кога играчот ќе испадне од платформите или пак кога ќе нема повеќе HP(животни поени).
+Играта завршува кога играчот ќе испадне од платформите или пак кога ќе нема повеќе HP(животни поени). Се губат животни поени (HP) кога непријател ќе ве допре.
 
 ##2. Контроли
 Играта се игра со копчињатa:
@@ -28,18 +28,28 @@ public class Scene
         private List<Player> players;
         private List<Enemy> enemies;
         private List<Platform> platforms;
+        /// <summary>
+        /// Constructor for a Scene object
+        /// </summary>
         public Scene()
         {
             platforms = new List<Platform>();
             players = new List<Player>();
             enemies = new List<Enemy>();
         }
+        /// <summary>
+        /// Function used for drawing all three entitiy types and applying gravity to Players and Enemies
+        /// </summary>
+        /// <param name="g">The graphics context</param>
         public void Draw(Graphics g)
         {
             players.ForEach(a => { a.ApplyGravity(gravity); a.Draw(g); });
             enemies.ForEach(a => { a.ApplyGravity(gravity); a.Draw(g); });
             platforms.ForEach(a => { a.Draw(g); });
         }
+        /// <summary>
+        /// Removing the elements which are out of the screen
+        /// </summary>
         public void Destroy()
         {
             List<Platform> removePlatform = new List<Platform>();
@@ -70,7 +80,7 @@ public class Scene
                 {
                     foreach (Enemy enemy in enemies)
                     {
-                        //Player collision 
+                        //Player collision with platform
                         if (player.NextPosition().IntersectsWith(platform.platform))
                         {
                             player.CollisionFix(platform.platform);
@@ -97,16 +107,10 @@ public class Scene
         {
             platforms.Add(platform);
         }
-
         public void AddToScene(Enemy enemy)
         {
             enemies.Add(enemy);
         }
-        public int EntitiesCount()
-        {
-            return platforms.Count + enemies.Count;
-        }
-
         public void AddToScene(Player player)
         {
             players.Add(player);
@@ -114,9 +118,9 @@ public class Scene
     }
 ```
 
-**English** / [Македонски](#1---)
+**English**
 ##1. Description
-This application is a game which is procedurally generated, i.e. the level will be different each time the game is played. The goal of the game is to survive as long as possible, thereby accumulating more and more points. The game ends when the player falls off of the platforms or when the HP pool is depleted.
+This application is a game which is procedurally generated, i.e. the level will be different each time the game is played. The goal of the game is to survive as long as possible, thereby accumulating more and more points. The game ends when the player falls off of the platforms or when the HP pool is depleted. You loose HP when an enemy touches you.
 
 ##2. How to play
 The controlls are simple:
